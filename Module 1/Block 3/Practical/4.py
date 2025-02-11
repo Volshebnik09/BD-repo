@@ -1,0 +1,10 @@
+import numpy as np
+matrix = np.random.randn(4, 5)
+row_means = np.mean(matrix, axis=1)
+row_mins = np.min(matrix, axis=1)
+row_maxs = np.max(matrix, axis=1)
+print("Matrix:")
+print(matrix)
+print("\nRow means:", row_means)
+print("Row mins:", row_mins)
+print("Row maxs:", row_maxs)
