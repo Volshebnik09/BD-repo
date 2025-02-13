@@ -1,0 +1,21 @@
+CREATE DATABASE Students COLLATE Cyrillic_General_CI_AS;
+GO
+
+USE Students;
+GO
+
+CREATE TABLE specStud (
+    SpecID INT PRIMARY KEY IDENTITY(1,1),
+    SpecName NVARCHAR(100) NOT NULL
+);
+GO
+
+CREATE TABLE lstStud (
+    StudID INT PRIMARY KEY IDENTITY(1,1),
+    FullName NVARCHAR(200) NOT NULL,
+    Course INT NOT NULL,
+    SpecID INT NOT NULL,
+    BirthDate DATE NOT NULL,
+    CONSTRAINT FK_lstStud_specStud FOREIGN KEY (SpecID) REFERENCES specStud(SpecID)
+);
+GO
